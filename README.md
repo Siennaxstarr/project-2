@@ -1,5 +1,5 @@
 
-  # Project-2
+  # Career-pal
 
   ## Description
 
@@ -54,6 +54,3 @@
 
   Deployment page: < heroku link will go here >
   Repository: https://github.com/Siennaxstarr/career-pal
-  
-
-  
