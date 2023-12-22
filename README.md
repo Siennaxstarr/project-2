@@ -53,6 +53,7 @@
   ## Deployment
 
   Deployment page: < heroku link will go here >
-  Repository: https://github.com/Siennaxstarr/project-2
+  Repository: https://github.com/Siennaxstarr/career-pal
+  
 
   
