@@ -1,0 +1,167 @@
+<!-- JSearch popup -->
+<div class="relative z-10 hidden" id="jsearch-key-popup" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <!--
+          Background backdrop, show/hide based on modal state.
+      
+          Entering: "ease-out duration-300"
+            From: "opacity-0"
+            To: "opacity-100"
+          Leaving: "ease-in duration-200"
+            From: "opacity-100"
+            To: "opacity-0"
+        -->
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <!--
+              Modal panel, show/hide based on modal state.
+      
+              Entering: "ease-out duration-300"
+                From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                To: "opacity-100 translate-y-0 sm:scale-100"
+              Leaving: "ease-in duration-200"
+                From: "opacity-100 translate-y-0 sm:scale-100"
+                To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            -->
+            <div
+                class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                            <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Jsearch API key
+                            </h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-gray-500">Career Pal uses a lot of API calls and a set amount is
+                                    used between all users. If you would not like to risk loss of functionality you may
+                                    use your own API key. This step is optional and a key is not required to get all the
+                                    features for this site. Sign up for an account at Rapid Api and subscribe to JSearch
+                                    by OpenWeb Ninja to get your own API key. <a class="text-blue-600"
+                                        href="https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch/pricing"
+                                        target="_blank" rel="noopener noreferrer">Select free plan and get your key
+                                        here.</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                    <button type="button" id="jsearch-key-popup-button"
+                        class="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grid grid-cols-2 my-10 gap-x-8 gap-y-5 mx-10 min-h-screen">
+    <div class="border-solid rounded-2xl border-2 border-indigo-900 sm:col-start-1 h-fit col-span-2 sm:col-span-1">
+        <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+            <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+                <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    alt="Your Company">
+                <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign up for
+                    an account</h2>
+            </div>
+
+            <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                <form class="space-y-6" action="#" method="POST">
+                    <div>
+                        <label for="signup-username"
+                            class="block text-sm font-medium leading-6 text-gray-900">Username</label>
+                        <div class="mt-2">
+                            <input id="signup-username" name="signup-username" type="text" autocomplete="username"
+                                required
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <label for="signup-password"
+                                class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+
+                        </div>
+                        <div class="mt-2">
+                            <input id="signup-password" name="signup-password" type="password"
+                                autocomplete="new-password" required
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between" id="jsearch-instructions">
+                            <label for="jsearch-key" class="block text-sm font-medium leading-6 text-gray-900">JSearch
+                                API key<span class="text-xs text-gray-500"> (Optional)</span></label>
+                            <div class="text-sm">
+                                <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">What is
+                                    this?</a>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <input id="jsearch-key" name="jsearch-key" type="password" required
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2">
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit"
+                            class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Create
+                            account</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+    <div
+        class="border-solid rounded-2xl border-2 border-indigo-900 row-start-2 col-span-2 sm:row-start-1 sm:col-start-2 h-fit sm:col-span-1">
+        <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+            <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+                <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    alt="Your Company">
+                <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Login to
+                    your account</h2>
+            </div>
+
+            <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                <form class="space-y-6" action="#" method="POST">
+                    <div>
+                        <label for="login-username"
+                            class="block text-sm font-medium leading-6 text-gray-900">Username</label>
+                        <div class="mt-2">
+                            <input id="login-username" name="login-username" type="text" autocomplete="username"
+                                required
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <label for="login-password"
+                                class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                            <div class="text-sm">
+                                <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot
+                                    password?</a>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <input id="login-password" name="login-password" type="password"
+                                autocomplete="current-password" required
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2">
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit"
+                            class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign
+                            in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+ <script src="../public/js/login.js"></script>
