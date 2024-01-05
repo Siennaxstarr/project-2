@@ -5,4 +5,4 @@ res.send('This is a new GET route');
 })
 
 
-module.exports.Router
+module.exports.router
