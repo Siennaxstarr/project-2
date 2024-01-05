@@ -16,7 +16,7 @@ router.get('/job-search', async (req, res) => {
   });
 
   //Reviews applications
-router.get('/appplications', async (req, res) => {
+router.get('/applications', async (req, res) => {
     res.render('applications');
   });
 
