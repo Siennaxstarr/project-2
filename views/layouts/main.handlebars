@@ -66,15 +66,16 @@
                     </div>
                 </div>
                 {{#if loggedIn}}
+                
+                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    <button
+                        class="text-white bg-red-600 hover:bg-red-900 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="logout-button">Logout</button>
+                </div>
+                {{else}}
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     <a href="/login"
                         class="text-white bg-indigo-600 hover:bg-indigo-900 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Sign
                         up or Login</a>
-                </div>
-                {{else}}
-                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                    <button
-                        class="text-white bg-red-600 hover:bg-red-900 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="logout-button">Logout</button>
                 </div>
                 {{/if}}
             </div>
