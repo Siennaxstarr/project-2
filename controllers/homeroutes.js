@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const withAuth = require('../utils/auth');
+
 
 //Goes to Landing Page 
 router.get('/', async (req, res) => {
@@ -11,12 +13,12 @@ router.get('/login', async (req, res) => {
   });
 
   //Allows you to search jobs
-router.get('/job-search', async (req, res) => {
+router.get('/job-search', withAuth, async (req, res) => {
     res.render('jobSearch');
   });
 
   //Reviews applications
-router.get('/applications', async (req, res) => {
+router.get('/applications', withAuth, async (req, res) => {
     res.render('applications');
   });
 
