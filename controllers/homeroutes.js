@@ -24,12 +24,7 @@ router.get('/job-search', withAuth, async (req, res) => {
     });
   });
 
-  //Reviews applications
-router.get('/applications', withAuth, async (req, res) => {
-    res.render('applications', {
-      loggedIn: req.session.logged_in,
-    });
-  });
+
 
 router.get('/job-search/:id', async (req, res) => {
   try {
