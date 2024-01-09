@@ -1,9 +1,9 @@
 const router = require('express').Router();
-
+const User = require('../../models/user');
 
 //Runs when user logs in with existing account
 router.post('/login', async (req, res) => {
-    try {
+  try {
         //Find if the returning user exists
         const userData = await User.findOne({ where: { username: req.body.username } });
         
@@ -35,6 +35,7 @@ router.post('/login', async (req, res) => {
         });
     
       } catch (err) {
+        console.log(err)
         res.status(400).json(err);
       }
 });
@@ -49,4 +50,20 @@ router.post('/logout', (req, res) => {
       res.status(404).end();
     }
   });
+
+//Creates new user
+router.post('/signup', async (req, res) => {
+  try{
+    const newUser = await User.create({
+      username: req.body.username,
+      password: req.body.password,
+      jsearchKey: req.body.apikey,
+    });
+    res.status(200).json({ newUser ,message: 'Account creation successful' });
+  }catch (err){
+    console.log(err)
+    res.json(err)
+  }
+  
+})
 module.exports = router;
