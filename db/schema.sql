@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS -- name_of_database_here;
-CREATE DATABASE -- name_of_database_here;
+DROP DATABASE IF EXISTS careerPal_db;
+CREATE DATABASE careerPal_db;
