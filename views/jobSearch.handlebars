@@ -1,3 +1,4 @@
+       
 <!-- Search Bar -->
 <form>
     <div class="my-3 mx-12">
@@ -10,7 +11,7 @@
                     placeholder="Javascript developer in TX">
             </div>
             <div class="mt-2 mx-2 w-full sm:w-28">
-                <button type="submit"
+                <button type="submit" id="job-search-button"
                     class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full">Search
                     Jobs</button>
             </div>
@@ -18,10 +19,10 @@
 
     </div>
 </form>
-
+{{#if jobResults}}
 <div class="grid  grid-cols-1 sm:grid-cols-2 gap-2 mx-4">
     <!-- Left column -->
-    <ul role="list" class="divide-y divide-gray-100 gap-y-10 min-h-screen">
+    <ul role="list" class="divide-y divide-gray-100 gap-y-10 min-h-screen" id="result-list">
         {{#each jobResults as |jobResult|}}
         {{> jobResultCard}}
         {{/each}}
@@ -29,7 +30,14 @@
 
     <!-- Right column -->
     <div class="lg:items-center lg:justify-between hidden sm:block sm:col-start-2 z-0 pt-3">
-
+        {{#if fullInfo}}
+        {{> jobResultFullInfo}}
+        {{/if}}
     </div>
 
 </div>
+{{/if}}
+{{#if jobResults}}
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+{{/if}}
+<script src="/js/jobSearch.js"></script>
