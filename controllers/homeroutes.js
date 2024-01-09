@@ -26,22 +26,47 @@ router.get('/job-search/:id', async (req, res) => {
         exclude: ['id', 'term']
       }
     })
-    console.log(jobData.result)
-    res.render('jobsearch', { jobResults: jobData.result });
+   if (jobData.result != null){
+     res.render('jobsearch', { jobResults: jobData.result });
+   }else {
+    res.json({ data: jobData.result })
+   }
   } catch (err) {
     console.log(err)
   }
 
 });
 
+router.get('/job-search/:searchTerm/:job/:isMobile', async (req, res) => {
+  try {
+    const jobData = await History.findOne({
+      where: {
+        term: req.params.searchTerm
+      }
+    });
+
+    const jobResults = jobData.result;
+    const fullInfo = jobResults.find((job) => job.job_title === req.params.job);
+
+    if (req.params.isMobile === 'true'){
+      res.render('jobsearchmobile', { fullInfo })
+    }else{
+
+      res.render('jobsearch', { jobResults, fullInfo })
+    }
+  } catch (err) {
+    res.status(500)
+  }
+})
+
 //Reviews applications
 router.get('/applications', async (req, res) => {
   res.render('applications');
 });
 
-  
-  module.exports = router;
 
-  
+module.exports = router;
 
-  
+
+
+
