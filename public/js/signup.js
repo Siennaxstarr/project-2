@@ -34,6 +34,7 @@ signupBtn.addEventListener('click', async (event) => {
       } else {
         signupUsername.value = '';
         signupnPassword.value = '';
+        jsearchKey.value = '';
         signupStatusText.textContent = 'Account created successfully'
         signupStatusText.classList.add('text-green-600');
 
