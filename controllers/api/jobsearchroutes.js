@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': process.env.API_KEY,
+                'X-RapidAPI-Key': '710c5dac1cmshdafbd0b15828357p1b3b5ejsn7b8a8c71b3a4',
                 'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
             }
         };
