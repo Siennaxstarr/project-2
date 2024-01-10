@@ -20,6 +20,7 @@ User.init(
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            notEmpty: true,
             primaryKey: true,
             autoIncrement: true,
         },
@@ -31,6 +32,7 @@ User.init(
         password: {
             type: DataTypes.STRING,
             allowNull: false,
+            notEmpty: true,
         },
         jsearchKey: {
             type: DataTypes.STRING,
