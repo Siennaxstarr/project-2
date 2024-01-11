@@ -12,10 +12,10 @@ if (document.querySelector('#result-list') !== null) {
             const searchTerm = decodeURIComponent(document.location.pathname.split('/')[2]);
 
             if (window.innerWidth >= 640) {
-                window.location.href = `/job-search/${searchTerm}/${itemTitle}/false`; 
+                window.location.replace(`/job-search/${searchTerm}/${itemTitle}/false`);
 
             } else {
-                window.location.href = `/job-search/${searchTerm}/${itemTitle}/true`
+                window.location.replace(`/job-search/${searchTerm}/${itemTitle}/true`) 
             }
         })
     });
@@ -34,7 +34,7 @@ searchBtn.addEventListener('click', async (event) => {
     const data =  res.json()
     
     if (data) {
-        window.location.href ='/job-search/' + searchTerm
+        window.location.replace('/job-search/' + searchTerm)
 
     } else {
 
@@ -46,7 +46,7 @@ searchBtn.addEventListener('click', async (event) => {
     
     
         if (res2.ok) {
-            window.location.href = `/job-search/ + ${searchTerm}`
+            window.location.replace(`/job-search/ + ${searchTerm}`)
             console.log(data)
         }
     }
