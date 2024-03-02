@@ -50,6 +50,7 @@
 
   * Sienna Vigil || [Siennaxstarr](https://github.com/Siennaxstarr)
   * Kaila Anderson || [Kal-a11y](https://github.com/Kal-a11y)
+  * very john   || [veryjohn1991](https://github.com/veryjohn1991)
 
 
   ## Deployment
